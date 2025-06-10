@@ -5,7 +5,7 @@ const favoriteSchema = mongoose.Schema(
   {
     userFrom: {
       type: Schema.Types.ObjectId,
-      ref: "User", // ObjectId를 가지고 User 모델 내의 모든 정보를 가져올 수 있게 함
+      ref: "User", 
     },
     movieId: {
       type: String,
