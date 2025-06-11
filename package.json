@@ -13,7 +13,7 @@
     "frontend": "npm run start --prefix client",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
   },
-  "author": "John ahn",
+  "author": "Chethan Nazre",
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.27.4",
