@@ -120,17 +120,17 @@ Here are some screenshots showcasing the Cine-Phile application:
 
 ### Home Page
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ChethanNazre/cine-phile/main/screenshots/home-page.png" alt="Home Page" width="800" />
+  <img src="./screenshots/Screenshot 2025-06-11 155533.png" alt="Home Page" width="800" />
 </p>
 
 ### Movies Section
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ChethanNazre/cine-phile/main/screenshots/movies-section.png" alt="Movies Section" width="800" />
+  <img src="./screenshots/Screenshot 2025-06-11 155548.png" alt="Movies Section" width="800" />
 </p>
 
 ### Movie Details Page
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ChethanNazre/cine-phile/main/screenshots/movie-details-page.png" alt="Movie Details Page" width="800" />
+  <img src="./screenshots/Screenshot 2025-06-11 155621.png" alt="Movie Details Page" width="800" />
 </p>
 
 <hr />
