@@ -113,28 +113,24 @@ The backend runs at <code>http://localhost:5000</code></blockquote>
 
 <hr />
 
-## 📸 Demo
 
 ## 📸 Demo
 
-<p>Here are some screenshots showcasing the Cine-Phile application:</p>
+Here are some screenshots showcasing the Cine-Phile application:
 
+### Home Page
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ChethanNazre/cine-phile/main/screenshots/home-page.png" alt="Screenshot 1" width="800" />
-  <br />
-  <em>Home Page</em>
+  <img src="https://raw.githubusercontent.com/ChethanNazre/cine-phile/main/screenshots/home-page.png" alt="Home Page" width="800" />
 </p>
 
+### Movies Section
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ChethanNazre/cine-phile/main/screenshots/movies-section.png" alt="Screenshot 2" width="800" />
-  <br />
-  <em>Movies Section</em>
+  <img src="https://raw.githubusercontent.com/ChethanNazre/cine-phile/main/screenshots/movies-section.png" alt="Movies Section" width="800" />
 </p>
 
+### Movie Details Page
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ChethanNazre/cine-phile/main/screenshots/movie-details-page.png" alt="Screenshot 3" width="800" />
-  <br />
-  <em>Movie Details Page</em>
+  <img src="https://raw.githubusercontent.com/ChethanNazre/cine-phile/main/screenshots/movie-details-page.png" alt="Movie Details Page" width="800" />
 </p>
 
 <hr />
