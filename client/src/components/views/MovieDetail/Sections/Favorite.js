@@ -22,7 +22,13 @@ function Favorite(props) {
   }, []);
   return (
     <div>
-      <button>Favorite</button>
+      <button
+        onClick={() => {
+          alert("Added to favorites successfully");
+        }}
+      >
+        Favorite
+      </button>
     </div>
   );
 }

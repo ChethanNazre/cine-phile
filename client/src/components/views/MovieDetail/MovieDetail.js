@@ -53,7 +53,7 @@ function MovieDetail(props) {
           />
         </div>
         {/* Movie Info */}
-        <MovieInfo movie={Movie} />
+        <MovieInfo movie={Movie} movieId={movieId} userFrom={"userId"}/>
         <br />
         {/* Actors Grid */}
         <div
