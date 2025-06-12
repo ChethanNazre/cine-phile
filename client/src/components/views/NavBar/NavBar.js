@@ -17,13 +17,16 @@ function NavBar() {
 
   return (
     <nav className="menu" style={{ position: 'fixed', zIndex: 5, width: '100%' }}>
-      <div className="menu__logo">
-        <a href="/">
+      <div className="menu__logo" style={{ display: 'flex', alignItems: 'center' }}>
+        <a href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
           <img
             src={require("C:/Users/prash/Desktop/Movie-App-MERN/client/src/CNS-Logo.png")}
             alt="Logo"
-            style={{ height: '40px', width: '40px' }}
+            style={{ height: '40px', width: '40px', marginRight: '10px' }}
           />
+          <span style={{ fontSize: '12px', fontWeight: 'bold', fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif', color: '#24292e' }}>
+            Cine-Phile
+          </span>
         </a>
       </div>
       <div className="menu__container">

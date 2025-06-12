@@ -4,14 +4,50 @@ const router = express.Router();
 const { Favorite } = require("../models/Favorite");
 
 router.post("/favoriteNumber", (req, res) => {
-  //mongoDB에서 favorite 숫자를 가져오기
-  Favorite.find({ movieId: req.body.movieId }).exec((err, info) => {
+//Find the number of favorites for a movie by movieId
+  Favorite.find({ movieId: req.body.movieId }).exec((err, favorite) => {
     
     if (err) return res.status(400).send(err);
 
-    //그 다음에 프론트에 다시 숫자 정보를 보내주기
-    res.status(200).json({ success: true, favoriteNumber: info.length });
-  }); //Favorite 모델의 movieId필드에 저장된 데이터와 프론트에서 던져준 movieId와 일치하는 데이터를 찾음
+
+    res.status(200).json({ success: true, favoriteNumber: favorite.length });
+  }); 
 });
+
+
+router.post("/favorited", (req, res) => {
+  //Find favorite information for a movie by userFrom and movieId inside the Favorite collection
+  Favorite.find({ "movieId": req.body.movieId, "userFrom": req.body.userFrom }).exec((err, favorite) => {
+    if (err) return res.status(400).send(err)
+    //How can we know if this movie is already favorited by the user?
+    let result = false;
+    if (favorite.length !== 0) {
+      result = true;
+    }
+    res.status(200).json({ success: true, favorited: result });
+    
+  })
+
+  });
+
+router.post("/addToFavorite", (req, res) => {
+//we need to save info about the movie and user to the Favorite collection
+  const favorite = new Favorite(req.body);
+
+  favorite.save((err, doc) => {
+    if (err) return res.json({ success: false, err });
+    return res.status(200).json({ success: true });
+  });
+});
+
+router.post("/removeFromFavorite", (req, res) => {
+//we need to save info about the movie and user to the Favorite collection
+ Favorite.findOneAndDelete({ movieId: req.body.movieId, userFrom: req.body.userFrom })
+  .exec((err, doc) => {
+    if (err) return res.status(400).json({ success: false, err });
+    res.status(200).json({ success: true, doc  });
+  });
+}
+);
 
 module.exports = router;
