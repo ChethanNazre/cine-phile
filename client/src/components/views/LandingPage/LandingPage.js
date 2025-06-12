@@ -52,7 +52,7 @@ function LandingPage() {
           {Movies &&
             Movies.map((movie, index) => (
               <React.Fragment key={index}>
-                {/* key값 넣어줘야 에러x */}
+              
                 <GridCards
                   landingpage
                   image={

@@ -19,7 +19,9 @@ function LoginPage(props) {
     setRememberMe(!rememberMe)
   };
 
-  const initialEmail = localStorage.getItem("rememberMe") ? localStorage.getItem("rememberMe") : '';
+  // const initialEmail = localStorage.getItem("rememberMe") ? localStorage.getItem("rememberMe") : '';
+const storedEmail = localStorage.getItem("rememberMe");
+const initialEmail = storedEmail && storedEmail !== "undefined" ? storedEmail : '';
 
   return (
     <Formik
@@ -90,7 +92,7 @@ function LoginPage(props) {
                   prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                   placeholder="Enter your email"
                   type="email"
-                  value={values.email}
+                  value={values.email || ''}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={

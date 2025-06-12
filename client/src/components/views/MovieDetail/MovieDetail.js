@@ -68,7 +68,7 @@ function MovieDetail(props) {
             {Casts &&
               Casts.map((cast, index) => (
                 <React.Fragment key={index}>
-                  {/* key값 넣어줘야 에러x */}
+                
                   <GridCards
                     image={
                       cast.profile_path
