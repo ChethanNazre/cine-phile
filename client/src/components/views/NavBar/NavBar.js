@@ -24,7 +24,7 @@ function NavBar() {
             alt="Logo"
             style={{ height: '40px', width: '40px', marginRight: '10px' }}
           />
-          <span style={{ fontSize: '12px', fontWeight: 'bold', fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif', color: '#24292e' }}>
+          <span style={{ fontSize: '14px', fontWeight: 'bold', fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif', color: '#24292e' }}>
             Cine-Phile
           </span>
         </a>
