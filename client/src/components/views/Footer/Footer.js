@@ -8,7 +8,7 @@ function Footer() {
             flexDirection: 'column', alignItems: 'center',
             justifyContent: 'center', fontSize:'1rem'
         }}>
-           <p> <h3>©2025 Chethan Nazre S - ALL RIGHTS RESERVED</h3></p>
+            <h4>© 2025 Chethan Nazre S - ALL RIGHTS RESERVED</h4>
         </div>
     )
 }
