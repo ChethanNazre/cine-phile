@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './favorite.css';
 import axios from 'axios';
 import { Button , Popover } from 'antd';
-
-const IMAGE_URL = 'https://image.tmdb.org/t/p/';
+import { IMAGE_BASE_URL } from '../../Config';
 
 function FavoritePage() {
 
@@ -55,7 +54,7 @@ const renderTableBody = FavoritedMovies.map((movie, index) => {
 const content = (
     <div>
         {movie.moviePost ?
-        <img src = {`${IMAGE_URL}w500${movie.moviePost}`} alt = {movie.movieTitle}/>
+        <img src = {`${IMAGE_BASE_URL}w500${movie.moviePost}`} alt = {movie.movieTitle}/>
     : "no image"}
     </div>
 )
