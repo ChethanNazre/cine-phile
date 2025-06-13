@@ -6,19 +6,19 @@ function MovieInfo(props) {
   return (
     <Descriptions title="Movie Info" bordered>
       <Descriptions.Item label="Title">{movie.title}</Descriptions.Item>
-      <Descriptions.Item label="release_date">
+      <Descriptions.Item label="Release Date">
         {movie.release_date}
       </Descriptions.Item>
-      <Descriptions.Item label="revenue">{movie.revenue}</Descriptions.Item>
-      <Descriptions.Item label="runtime">{movie.runtime}</Descriptions.Item>
-      <Descriptions.Item label="vote_average">
+      <Descriptions.Item label="Revenue">{movie.revenue}</Descriptions.Item>
+      <Descriptions.Item label="Runtime">{movie.runtime}</Descriptions.Item>
+      <Descriptions.Item label="Vote Average">
         {movie.vote_average}
       </Descriptions.Item>
-      <Descriptions.Item label="vote_count">
+      <Descriptions.Item label="Vote Count">
         {movie.vote_count}
       </Descriptions.Item>
-      <Descriptions.Item label="status">{movie.status}</Descriptions.Item>
-      <Descriptions.Item label="popularity">
+      <Descriptions.Item label="Status">{movie.status}</Descriptions.Item>
+      <Descriptions.Item label="Popularity">
         {movie.popularity}
       </Descriptions.Item>
     </Descriptions>
