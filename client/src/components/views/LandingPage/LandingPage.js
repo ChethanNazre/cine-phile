@@ -6,7 +6,7 @@ import GridCards from "../commons/GridCards";
 import { Row } from "antd";
 
 function LandingPage() {
-  const [Movies, setMovies] = useState([]); // Movies데이터에는 배열이 들어올 거니 initial state도 배열로
+  const [Movies, setMovies] = useState([]); // 
   const [MainMovieImage, setMainMovieImage] = useState(null);
   const [CurrentPage, setCurrentPage] = useState(0);
 
