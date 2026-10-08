@@ -47,6 +47,7 @@ mongoose
 
 app.use("/api/users", require("./routes/users"));
 app.use("/api/favorite", require("./routes/favorite"));
+app.use("/api/movies", require("./routes/movies"));
 
 app.get("/health", (req, res) => {
   res.status(200).json({ status: "ok" });
