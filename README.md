@@ -1,175 +1,146 @@
-# 🎬 Cine-Phile
+# Cine-Phile
 
-**Cine-Phile** is a futuristic, high-performance full-stack **MERN (MongoDB, Express.js, React, Node.js)** movie web application that brings the cinematic universe to your fingertips. Explore rich movie metadata, search intuitively, rate like a critic, and build your ultimate digital watchlist.
+A cinematic MERN web app to explore, rate, and manage your favorite movies with a futuristic UI.
 
-<p><strong>GitHub Repo:</strong> <a href="https://github.com/ChethanNazre/cine-phile" target="_blank">https://github.com/ChethanNazre/cine-phile</a></p>
+## Overview
 
+Cine-Phile is a full-stack movie app built with MongoDB, Express, React, and Node.js. It lets users browse trending movies, search for titles, view cast and details, save favorites, and authenticate securely.
 
-<p><em>“Lights, camera, action!”</em></p>
+The app now uses a secure server-side TMDb integration so the movie API key is not exposed in the browser.
 
-</div>
+## Features
 
-<hr />
+- Browse popular movies from TMDb
+- Search movies by name
+- View movie details, credits, and posters
+- Favorite/unfavorite movies per user
+- JWT-based authentication
+- Protected routes and secure cookies
+- Responsive movie grid and detail views
+- Production-ready server configuration and env-based setup
 
-## 🚀 Key Features
+## Tech Stack
 
-<ul>
-  <li>🎥 Browse a vast, dynamic movie collection powered by movie APIs</li>
-  <li>🔍 Fuzzy search by title, genre, language, or rating</li>
-  <li>⭐ Real-time rating, reviews, and interactive movie cards</li>
-  <li>❤️ Persistent personalized watchlist per user</li>
-  <li>🔐 JWT-secured authentication and protected routes</li>
-  <li>🛠️ Admin Dashboard to manage users, movies, and reviews</li>
-  <li>📡 Real-time states: loaders, skeleton UIs, error boundaries</li>
-  <li>🚀 Optimized performance with lazy loading and code splitting</li>
-  <li>🧠 Scalable, modular, developer-friendly architecture</li>
-</ul>
+- Frontend: React.js, Redux, Ant Design, Axios
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- Authentication: JWT + bcrypt
+- Movie Data: TMDb API
+- Deployment: Vercel/Netlify (frontend), Render/Railway/Heroku (backend)
 
-<p>These features combine to deliver a fast, immersive, and modern cinematic web experience across devices.</p>
-
-<hr />
-
-## 🛠️ Tech Stack
-
-<table>
-  <tr><th>Layer</th><th>Technology</th></tr>
-  <tr><td>Frontend</td><td>React.js, Tailwind CSS, Axios</td></tr>
-  <tr><td>Backend</td><td>Node.js, Express.js</td></tr>
-  <tr><td>Database</td><td>MongoDB Atlas</td></tr>
-  <tr><td>Authentication</td><td>JWT, Bcrypt</td></tr>
-  <tr><td>Utilities</td><td>React Router, Context API, Toastify</td></tr>
-  <tr><td>Deployment</td><td>Vercel (Client), Render (API)</td></tr>
-</table>
-
-<p>The chosen stack ensures performance, scalability, and maintainability for both developers and users.</p>
-
-<hr />
-
-## 🧰 Getting Started
-
-<p>Get the application running locally with the following steps:</p>
-
-### 🔃 Clone the Repository
+## Project Structure
 
 ```bash
-git clone https://github.com/ChethanNazre/cine-phile.git
-cd cine-phile
+cine-phile/
+├── client/                  # React frontend
+│   ├── src/
+│   ├── public/
+│   └── package.json
+├── server/                  # Express backend
+│   ├── config/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   └── index.js
+├── .env.example
+├── .gitignore
+├── package.json
+├── README.md
+├── screenshots/
+└── vercel.json
 ```
 
-<hr />
+## Prerequisites
 
-### ⚙️ Backend Setup
+- Node.js 18+
+- npm 9+
+- MongoDB instance (local or Atlas)
+- TMDb API key
+
+## Environment Setup
+
+Copy `.env.example` to a real `.env` file in the project root and set the values:
+
+```env
+NODE_ENV=development
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/cine-phile
+JWT_SECRET=change_this_to_a_strong_secret
+JWT_EXPIRY=1h
+CLIENT_URL=http://localhost:3000
+TMDB_API_KEY=your_tmdb_api_key_here
+TMDB_IMAGE_BASE=https://image.tmdb.org/t/p
+```
+
+## Local Development
+
+Install dependencies:
 
 ```bash
-cd server
 npm install
-touch .env
-# Add MongoDB URI and JWT secret in .env
+cd client && npm install && cd ..
+```
+
+Start both services together:
+
+```bash
 npm run dev
 ```
 
-<p>This launches the Express server and connects it to MongoDB.</p>
-
-#### Sample `.env` file for backend
-
-```env
-PORT=5000
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_super_secret_key
-```
-
-<hr />
-
-### 🎨 Frontend Setup
+Or run them separately:
 
 ```bash
-cd client
-npm install
-npm start
+npm run backend
+npm run frontend
 ```
 
-<p>Run the React development server and open the app in your browser.</p>
+The app is available at:
 
-<blockquote>The app should now be live at <code>http://localhost:3000</code><br />
-The backend runs at <code>http://localhost:5000</code></blockquote>
+- Frontend: http://localhost:3000
+- Backend: http://localhost:5000
 
-<hr />
+## API Routes
 
-## 🧪 Folder Structure
+The backend exposes movie routes through the server, keeping the TMDb API secret on the server side:
 
-<pre><code>cine-phile/
-├── client/           # React frontend
-│   ├── src/
-│   └── public/
-├── server/           # Express backend
-│   ├── routes/
-│   ├── models/
-│   └── controllers/
-├── README.md
-└── .gitignore
-</code></pre>
+- `GET /api/movies/popular`
+- `GET /api/movies/search?q=...`
+- `GET /api/movies/:id`
+- `GET /api/movies/:id/credits`
 
-<p>This modular layout separates concerns cleanly and supports scalability and maintenance.</p>
+## Production Deployment
 
-<hr />
+Recommended deployment setup:
 
+- Frontend: Vercel or Netlify
+- Backend: Render, Railway, or Heroku
+- Database: MongoDB Atlas
 
-## 📸 Demo
+Required production env variables:
 
-Here are some screenshots showcasing the Cine-Phile application:
+- `NODE_ENV=production`
+- `PORT=5000`
+- `MONGO_URI`
+- `JWT_SECRET`
+- `CLIENT_URL`
+- `TMDB_API_KEY`
+- `TMDB_IMAGE_BASE`
 
-### Home Page
-<p align="center">
-  <img src="./screenshots/Screenshot 2025-06-11 155533.png" alt="Home Page" width="800" />
-</p>
+## Screenshots
 
-### Movies Section
-<p align="center">
-  <img src="./screenshots/Screenshot 2025-06-11 155548.png" alt="Movies Section" width="800" />
-</p>
+The app screenshots are stored in the `screenshots/` folder.
 
-### Movie Details Page
-<p align="center">
-  <img src="./screenshots/Screenshot 2025-06-11 155621.png" alt="Movie Details Page" width="800" />
-</p>
+## Contributing
 
-<hr />
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Open a pull request
 
-## 🤝 Contributing
+## License
 
-<p>We welcome community contributions to improve Cine-Phile in every way possible—from UI/UX improvements and performance tweaks to feature additions and documen
+This project is licensed under the MIT License.
 
-<p>We welcome community contributions!</p>
-<ol>
-  <li>🍴 Fork the repository</li>
-  <li>🛠️ Create your feature branch: <code>git checkout -b feature/YourFeature</code></li>
-  <li>✅ Commit your changes: <code>git commit -m 'Add amazing feature'</code></li>
-  <li>📤 Push the branch: <code>git push origin feature/YourFeature</code></li>
-  <li>🔁 Open a Pull Request</li>
-</ol>
+## Author
 
-<p>Feel free to submit improvements in UI, bug fixes, documentation, or performance enhancements.</p>
-
-<hr />
-
-## 📄 License
-
-<p>This project is licensed under the <strong>MIT License</strong>.</p>
-<p>You are free to use, modify, and distribute this project with appropriate attribution.</p>
-<p>See the <a href="https://github.com/ChethanNazre/cine-phile/blob/main/LICENSE" target="_blank">LICENSE</a> file for more details.</p>
-
-<hr />
-
-## 💬 Connect With Me
-
-<ul>
-  <li>🐙 GitHub: <a href="https://github.com/ChethanNazre" target="_blank">@ChethanNazre</a></li>
-  <li>💼 LinkedIn: <a href="https://linkedin.com/in/chethan-nazre-s" target="_blank">Chethan Nazre S.</a></li>
-
-</ul>
-
-<p>Want to collaborate, hire, or geek out over movies and tech? Reach out! 🎬⚙️</p>
-
-<hr />
-
-<blockquote><em>Built with ⚡ and 🎬 by Chethan Nazre S.</em></blockquote>
+Chethan Nazre
